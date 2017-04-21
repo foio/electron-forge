@@ -6,7 +6,7 @@ import { ensureFile } from '../../util/ensure-output';
 import configFn from '../../util/config-fn';
 
 export default async (dir, appName, targetArch, forgeConfig, packageJSON) => { // eslint-disable-line
-  const outPath = path.resolve(dir, '../make', `${appName}.dmg`);
+  const outPath = path.resolve(dir, '../make', `${appName}-${packageJSON.version}.dmg`);
   await ensureFile(outPath);
   const dmgConfig = Object.assign({
     overwrite: true,

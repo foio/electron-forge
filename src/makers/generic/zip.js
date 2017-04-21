@@ -21,7 +21,7 @@ const zipPromise = (from, to) =>
   });
 
 export default async (dir, appName, targetArch, forgeConfig, packageJSON) => { // eslint-disable-line
-  const zipPath = path.resolve(dir, '../make', `${path.basename(dir)}.zip`);
+  const zipPath = path.resolve(dir, '../make', `${path.basename(dir)}-${packageJSON.version}.zip`);
   await ensureFile(zipPath);
   switch (process.platform) {
     // This case is tested but not on the coverage reporting platform
